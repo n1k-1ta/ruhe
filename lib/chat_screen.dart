@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'chat_provider.dart';
 
 class ChatScreen extends StatelessWidget {
-  ChatScreen({Key? key}) : super(key: key);
+  ChatScreen({super.key});
 
   final TextEditingController _controller = TextEditingController();
 

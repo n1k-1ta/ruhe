@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "596825328280",
+    "project_id": "ruhe-91687",
+    "storage_bucket": "ruhe-91687.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596825328280:android:db51c2ae7406208f16deed",
+        "android_client_info": {
+          "package_name": "com.example.ruhe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbO9hg8rsMzdMf8cI63Lbu-0-vnTCGnZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

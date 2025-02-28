@@ -34,7 +34,7 @@ class ChatProvider extends ChangeNotifier {
           ...messages.map((msg) => {
             "role": msg.isUser ? "user" : "assistant",
             "content": msg.text
-          }).toList()
+          })
         ],
         "stream": false
       };

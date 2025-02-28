@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MenuComponent extends StatefulWidget {
+  const MenuComponent({super.key});
+
   @override
   _MenuComponentState createState() => _MenuComponentState();
 }
