@@ -29,7 +29,7 @@ class ChatProvider extends ChangeNotifier {
         "messages": [
           {
             "role": "system",
-            "content": systemPrompt // Подключаем промпт для корректного поведения
+            "content": systemPrompt 
           },
           ...messages.map((msg) => {
             "role": msg.isUser ? "user" : "assistant",

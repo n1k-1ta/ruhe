@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'splash_screen.dart';
-import 'auth_service.dart';
+import '../services/auth_service.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -12,7 +12,7 @@ class AuthScreen extends StatefulWidget {
 
 class _AuthScreenState extends State<AuthScreen> {
   bool _showSplash = true;
-  bool? isLoginScreen; // null - экран выбора, true - вход, false - регистрация
+  bool? isLoginScreen; 
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _birthDateController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
@@ -54,7 +54,7 @@ class _AuthScreenState extends State<AuthScreen> {
           Padding(
             padding: EdgeInsets.symmetric(vertical: 15),
             child: SizedBox(
-              width: 250, // Фиксированная ширина кнопок
+              width: 250, 
               child: Row(
                 children: [
                   Expanded(
@@ -152,7 +152,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
   Widget _buildButton(String text, VoidCallback onPressed) {
     return SizedBox(
-      width: 250, // Фиксированная ширина кнопок
+      width: 250, 
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -208,7 +208,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     Navigator.of(context).pop();
                     setState(() => isLoginScreen = null);
                   },
-                  child: Text("Хорошо", style: TextStyle(color: Color(0xFFD5D0E6))),
+                  child: Text("Хорошо", style: TextStyle(color: Color.fromARGB(0, 13, 13, 13))),
                 ),
               ],
             );

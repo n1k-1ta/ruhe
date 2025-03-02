@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'auth_screen.dart';
-import 'chat_screen.dart';
+import 'screens/auth_screen.dart';
+import 'screens/chat_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
-import 'package:provider/provider.dart'; // Добавляем пакет для Provider
-import 'chat_provider.dart'; // Импортируем ChatProvider
+import 'utils/firebase_options.dart';
+import 'package:provider/provider.dart'; 
+import 'providers/chat_provider.dart'; 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         routes: {
           "/": (context) => AuthScreen(),
           "/chat": (context) => ChatScreen(),
+          
         },
       ),
     );
