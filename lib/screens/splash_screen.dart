@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ruhe/providers/color_provider.dart'; // Импортируем ValueNotifier
 
 class SplashScreen extends StatefulWidget {
   final VoidCallback onFinish;
@@ -19,14 +20,14 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
     );
     _animation = Tween<Offset>(
-      begin: Offset(0, 0),
-      end: Offset(0, -1),
+      begin: const Offset(0, 0),
+      end: const Offset(0, -1),
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
 
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 2), () {
       if (mounted) {
         _controller.forward().then((_) => widget.onFinish());
       }
@@ -35,14 +36,19 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
 
   @override
   Widget build(BuildContext context) {
-    return SlideTransition(
-      position: _animation,
-      child: Container(
-        color: Color(0xFFD5D0E6),
-        child: Center(
-          child: SvgPicture.asset('lib/assets/logo_ruhe.svg', width: 50, height: 50),
-        ),
-      ),
+    return ValueListenableBuilder<Color>(
+      valueListenable: selectedColorNotifier,
+      builder: (context, color, child) {
+        return SlideTransition(
+          position: _animation,
+          child: Container(
+            color: color,
+            child: Center(
+              child: SvgPicture.asset('lib/assets/logo_ruhe.svg', width: 50, height: 50),
+            ),
+          ),
+        );
+      },
     );
   }
 
